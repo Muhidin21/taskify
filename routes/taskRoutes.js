@@ -1,13 +1,14 @@
+const { getTask } = require("../controllers/taskControllers");
+
 const taskrRoutes= (req,res)=>{
     if (req.method=== 'GET'){
-        res.method===('Get all tasks')
-
+        getTask(req,res);
     }else if(req.method==='POST'){
-        res.end('Create a new task');
-    }else if(req.method==='PATH'){
-        res.end('Updatea task')
+       createTask(req,res);
+    }else if(req.method==='PATCH'){
+      updateTask(req,res);
     }else if(req.method==='DELET'){
-        res.end('Delete a task');
+        deleteTask(req, res);
     }else{
         res.writteHead(404),'Not Found',{'content-type' :'application/json'}
         res.end(JSON.stringify({
@@ -15,3 +16,4 @@ const taskrRoutes= (req,res)=>{
         })) 
     }
 }
+module.exports = taskrRoutes;
