@@ -1,11 +1,12 @@
 const { execFileSync } = require('child_process');
 const fs=require('fs');
-const path=require('path');
+const path=require('path'); 
 const filepath='.data/task.json';
-const writeTasksToFile=(tasks)=>{
+
+exports. writeTasksToFile=(tasks)=>{
     fs.writeFileSync(filepath,JSON.stringify(tasks))
 }
-const readTasksForfile=(tasks)=>{
+exports. readTasksForfile=(tasks)=>{
     if(! fs.existsSync(filepath)){
         writeTasksToFile([])
     }
