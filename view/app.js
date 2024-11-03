@@ -1,10 +1,11 @@
 
 const HTTP=require('http'); 
+const taskrRoutes = require('../routes/taskRoutes');
 const HOSTNAME='localhost';
-const PORT=90000;
+const PORT=9001;
 const server=HTTP.createServer((req,res)=>{
     if(req.url.startsWith('/tasks')){
-        taskRoutes(req,res)
+        taskrRoutes(req,res)
     }
     else{
         resizeTo.writeHead(404,' Not Found',{'content-type':'application/json'})
